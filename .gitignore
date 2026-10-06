@@ -1,7 +1,7 @@
+node_modules
+.env
 orders.json
-orders.json
-orders.json
-orders.json
-orders.json
-orders.json
-orders.json
+hidden.json
+.DS_Store
+.venv
+__pycache__

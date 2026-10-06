@@ -1,8 +1,17 @@
-<!DOCTYPE html><meta name=viewport content="width=device-width,initial-scale=1"><title>Orders</title>
-<style>body{background:#000;color:#f2f0eb;font-family:Helvetica,Arial;padding:16px}.o{border-top:1px solid #333;padding:12px 0}.p{color:#5fe37a}.f{color:#ff3b1f}button{padding:8px 14px;font-weight:700}</style>
-<h1>ORDERS</h1><div id=l></div>
-<script>const k=new URLSearchParams(location.search).get("key");
-async function load(){const r=await fetch("/api/orders?key="+k);if(!r.ok){l.textContent="Unauthorised";return}
-l.innerHTML=(await r.json()).map(o=>`<div class=o><b>${o.reference.slice(-6).toUpperCase()}</b> <span class="${o.status=="PAID"?"p":o.status=="FAILED"?"f":""}">${o.status}</span> · ${o.dkk} kr · ${new Date(o.created).toLocaleTimeString()}<br>${o.desc}<br>${o.status=="PAID"&&!o.served?`<button onclick="srv('${o.reference}')">Served</button>`:o.served?"served ✓":""}</div>`).join("")}
-async function srv(r){await fetch("/api/orders/"+r+"/served?key="+k,{method:"POST"});load()}
-load();setInterval(load,5000)</script>
+<!DOCTYPE html><meta name=viewport content="width=device-width,initial-scale=1"><title>Staff</title>
+<style>body{background:#000;color:#f2f0eb;font-family:Helvetica,Arial;padding:16px;max-width:760px;margin:auto}h1,h2{letter-spacing:-.03em}.o,.d{border-top:1px solid #333;padding:10px 0;display:flex;justify-content:space-between;gap:10px;align-items:center}.p{color:#5fe37a}.f{color:#ff3b1f}button{padding:8px 14px;font-weight:700}.off{opacity:.45}.tabs button{background:none;color:#f2f0eb;border:1px solid #555;margin-right:6px}.tabs .on{background:#f2f0eb;color:#000}input[type=checkbox]{width:26px;height:26px}</style>
+<h1>STAFF</h1><div class=tabs><button id=t1 class=on>Orders</button><button id=t2>Drinks on/off</button></div>
+<div id=orders></div><div id=drinks style="display:none"><p>Untick a drink to hide it from the menu (e.g. sold out). Hidden drinks cannot be ordered.</p><div id=dl></div></div>
+<script>
+const k=new URLSearchParams(location.search).get('key');
+const $=i=>document.getElementById(i);
+t1.onclick=()=>tab(1);t2.onclick=()=>tab(2);
+function tab(n){orders.style.display=n==1?'':'none';drinks.style.display=n==2?'':'none';t1.className=n==1?'on':'';t2.className=n==2?'on':'';if(n==2)loadDrinks()}
+async function loadOrders(){const r=await fetch('/api/orders?key='+k);if(!r.ok){orders.textContent='Unauthorised (is ADMIN_KEY set on the server?)';return}
+ orders.innerHTML=(await r.json()).map(o=>`<div class=o><div><b>${o.reference.slice(-6).toUpperCase()}</b> <span class="${o.status=='PAID'?'p':o.status=='FAILED'?'f':''}">${o.status}</span> - ${o.dkk} kr - ${new Date(o.created).toLocaleTimeString()}<br>${o.desc}</div><div>${o.status=='PAID'&&!o.served?`<button onclick="srv('${o.reference}')">Served</button>`:o.served?'served':''}</div></div>`).join('')}
+async function srv(r){await fetch('/api/orders/'+r+'/served?key='+k,{method:'POST'});loadOrders()}
+async function loadDrinks(){const r=await fetch('/api/drinks?key='+k);if(!r.ok){dl.textContent='Unauthorised';return}
+ dl.innerHTML=(await r.json()).map(d=>`<label class="d ${d.hidden?'off':''}"><span>${d.name} <small>(${d.cat}, ${d.price} kr)</small></span><input type=checkbox ${d.hidden?'':'checked'} onchange="tog(${d.id},this)"></label>`).join('')}
+async function tog(id,el){const r=await fetch('/api/drinks/'+id+'/hidden?key='+k,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({hidden:!el.checked})});if(r.ok)el.parentElement.classList.toggle('off',!el.checked);else{el.checked=!el.checked;alert('Failed')}}
+loadOrders();setInterval(loadOrders,5000);
+</script>
