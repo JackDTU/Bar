@@ -1,17 +1,40 @@
 <!DOCTYPE html><meta name=viewport content="width=device-width,initial-scale=1"><title>Staff</title>
-<style>body{background:#000;color:#f2f0eb;font-family:Helvetica,Arial;padding:16px;max-width:760px;margin:auto}h1,h2{letter-spacing:-.03em}.o,.d{border-top:1px solid #333;padding:10px 0;display:flex;justify-content:space-between;gap:10px;align-items:center}.p{color:#5fe37a}.f{color:#ff3b1f}button{padding:8px 14px;font-weight:700}.off{opacity:.45}.tabs button{background:none;color:#f2f0eb;border:1px solid #555;margin-right:6px}.tabs .on{background:#f2f0eb;color:#000}input[type=checkbox]{width:26px;height:26px}</style>
-<h1>STAFF</h1><div class=tabs><button id=t1 class=on>Orders</button><button id=t2>Drinks on/off</button></div>
-<div id=orders></div><div id=drinks style="display:none"><p>Untick a drink to hide it from the menu (e.g. sold out). Hidden drinks cannot be ordered.</p><div id=dl></div></div>
+<style>body{background:#000;color:#f2f0eb;font-family:Helvetica,Arial;padding:16px;max-width:900px;margin:auto}h1{letter-spacing:-.03em}.o,.d{border-top:1px solid #333;padding:10px 0;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.p{color:#5fe37a}.f{color:#ff3b1f}button{padding:8px 14px;font-weight:700;cursor:pointer}.off{opacity:.45}.tabs button{background:none;color:#f2f0eb;border:1px solid #555;margin-right:6px}.tabs .on{background:#f2f0eb;color:#000}input,select{background:#111;color:#f2f0eb;border:1px solid #555;padding:7px;font-size:1rem}input[type=checkbox]{width:22px;height:22px}input[type=number]{width:80px}.d input[data-f=sale]{width:170px}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}form label{display:block;margin:10px 0}form input[type=text],form input[type=number],form select{width:100%;max-width:420px}#msg{margin:12px 0;color:#5fe37a;white-space:pre-wrap}small{opacity:.6}</style>
+<h1>STAFF</h1><div class=tabs><button id=t1 class=on>Orders</button><button id=t2>Drinks</button><button id=t3>Add drink</button></div><div id=msg></div>
+<div id=orders></div>
+<div id=drinks style="display:none"><div class=bar><select id=scope><option value=beers>Beers only</option><option value=all>All drinks</option></select><button id=bn>Remove NEW tags</button><button id=bs>Remove discounts</button></div><p><small>Tick = visible on the menu. Changes save immediately.</small></p><div id=dl></div></div>
+<div id=add style="display:none"><form id=f><label>Name<input type=text id=n required></label><label>Category<select id=c></select></label><label id=cw style="display:none">New category name<input type=text id=cn></label>
+<label>Price (kr)<input type=number id=pr required min=1 max=2000></label><label>Container<select id=fm><option value=can>Can</option><option value=bottle>Bottle</option><option value=wine>Wine bottle</option></select></label>
+<label><input type=checkbox id=al checked> Contains alcohol (age check)</label><label><input type=checkbox id=nw checked> Show NEW tag</label><label>Discount note (optional)<input type=text id=sl placeholder="SALE 7 kr off"></label>
+<label>Image: Ambrosia product number OR image URL<input type=text id=im placeholder="e.g. 151489 or https://...  (empty = Google search if configured)"></label><button>Add drink</button></form></div>
 <script>
-const k=new URLSearchParams(location.search).get('key');
-const $=i=>document.getElementById(i);
-t1.onclick=()=>tab(1);t2.onclick=()=>tab(2);
-function tab(n){orders.style.display=n==1?'':'none';drinks.style.display=n==2?'':'none';t1.className=n==1?'on':'';t2.className=n==2?'on':'';if(n==2)loadDrinks()}
-async function loadOrders(){const r=await fetch('/api/orders?key='+k);if(!r.ok){orders.textContent='Unauthorised (is ADMIN_KEY set on the server?)';return}
- orders.innerHTML=(await r.json()).map(o=>`<div class=o><div><b>${o.reference.slice(-6).toUpperCase()}</b> <span class="${o.status=='PAID'?'p':o.status=='FAILED'?'f':''}">${o.status}</span> - ${o.dkk} kr - ${new Date(o.created).toLocaleTimeString()}<br>${o.desc}</div><div>${o.status=='PAID'&&!o.served?`<button onclick="srv('${o.reference}')">Served</button>`:o.served?'served':''}</div></div>`).join('')}
-async function srv(r){await fetch('/api/orders/'+r+'/served?key='+k,{method:'POST'});loadOrders()}
-async function loadDrinks(){const r=await fetch('/api/drinks?key='+k);if(!r.ok){dl.textContent='Unauthorised';return}
- dl.innerHTML=(await r.json()).map(d=>`<label class="d ${d.hidden?'off':''}"><span>${d.name} <small>(${d.cat}, ${d.price} kr)</small></span><input type=checkbox ${d.hidden?'':'checked'} onchange="tog(${d.id},this)"></label>`).join('')}
-async function tog(id,el){const r=await fetch('/api/drinks/'+id+'/hidden?key='+k,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({hidden:!el.checked})});if(r.ok)el.parentElement.classList.toggle('off',!el.checked);else{el.checked=!el.checked;alert('Failed')}}
+const k=new URLSearchParams(location.search).get('key'),$=i=>document.getElementById(i),NOALC=['Soft Drinks','Non-Alc. Beers','Ginger Beer & Kombucha'];
+const api=(p,m='GET',b)=>fetch('/api'+p+(p.includes('?')?'&':'?')+'key='+encodeURIComponent(k),{method:m,headers:{'Content-Type':'application/json'},body:b&&JSON.stringify(b)}).then(async r=>({ok:r.ok,status:r.status,j:await r.json().catch(()=>({}))}));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+const say=t=>{$('msg').textContent=t;setTimeout(()=>{if($('msg').textContent===t)$('msg').textContent=''},9000)};
+[1,2,3].forEach(n=>$('t'+n).onclick=()=>tab(n));
+function tab(n){$('orders').style.display=n==1?'':'none';$('drinks').style.display=n==2?'':'none';$('add').style.display=n==3?'':'none';[1,2,3].forEach(i=>$('t'+i).className=i==n?'on':'');if(n>1)loadDrinks()}
+async function loadOrders(){const r=await api('/orders');if(!r.ok){$('orders').textContent='Unauthorised (is ADMIN_KEY set on the server?)';return}
+ $('orders').innerHTML=r.j.map(o=>`<div class=o><div><b>${o.reference.slice(-6).toUpperCase()}</b> <span class="${o.status=='PAID'?'p':o.status=='FAILED'?'f':''}">${o.status}</span> - ${o.dkk} kr - ${new Date(o.created).toLocaleTimeString()}<br>${esc(o.desc)}</div><div>${o.status=='PAID'&&!o.served?`<button onclick="srv('${o.reference}')">Served</button>`:o.served?'served':''}</div></div>`).join('')}
+async function srv(r){await api('/orders/'+r+'/served','POST');loadOrders()}
+let LIST=[];
+async function loadDrinks(){const r=await api('/drinks');if(!r.ok){$('dl').textContent='Unauthorised';return}LIST=r.j;
+ const cats=[...new Set(LIST.map(d=>d.cat))];$('c').innerHTML=cats.map(c=>`<option>${esc(c)}</option>`).join('')+'<option value="__new">Other...</option>';
+ $('dl').innerHTML=LIST.map(d=>`<div class="d ${d.hidden?'off':''}" data-id="${d.id}"><label><input type=checkbox data-f=vis ${d.hidden?'':'checked'}> <b>${esc(d.name)}</b> <small>${esc(d.cat)}</small></label><span><input type=number data-f=price value="${d.price}"> kr <label><input type=checkbox data-f=isNew ${d.isNew?'checked':''}> NEW</label> <input data-f=sale placeholder="discount note" value="${esc(d.sale||'')}"> <button data-a=img>Image</button> <button data-a=del>Delete</button></span></div>`).join('')}
+$('dl').addEventListener('change',async e=>{const row=e.target.closest('.d'),f=e.target.dataset.f;if(!row||!f)return;const id=row.dataset.id;
+ if(f=='vis'){const r=await api('/drinks/'+id+'/hidden','POST',{hidden:!e.target.checked});if(r.ok)row.classList.toggle('off',!e.target.checked);return}
+ const v=f=='isNew'?e.target.checked:e.target.value;const r=await api('/drinks/'+id+'/update','POST',{[f]:v});say(r.ok?'Saved':'Failed')});
+$('dl').addEventListener('click',async e=>{const row=e.target.closest('.d'),a=e.target.dataset.a;if(!row||!a)return;const id=row.dataset.id;
+ if(a=='del'){if(confirm('Delete this drink?')){await api('/drinks/'+id,'DELETE');loadDrinks()}}
+ if(a=='img'){const v=prompt('Ambrosia product number or image URL (empty = Google search if configured)');if(v===null)return;say('Fetching image...');
+  const r=await api('/drinks/'+id+'/image','POST',/^[0-9]+$/.test(v.trim())?{ambrosiaNo:v.trim()}:{imageUrl:v.trim()});say(r.j.ok?'Image updated from '+r.j.source:'Image failed: '+(r.j.error||''))}});
+const bulk=async a=>{const r=await api('/bulk','POST',{action:a,scope:$('scope').value});say('Changed '+(r.j.changed||0)+' drinks');loadDrinks()};
+$('bn').onclick=()=>bulk('clearNew');$('bs').onclick=()=>bulk('clearSale');
+$('c').onchange=()=>{$('cw').style.display=$('c').value=='__new'?'':'none';const c=$('c').value;if(c!='__new'){$('al').checked=!NOALC.includes(c);if(c=='Wine')$('fm').value='wine'}};
+$('f').onsubmit=async e=>{e.preventDefault();const cat=$('c').value=='__new'?$('cn').value:$('c').value;say('Adding and fetching image...');
+ const im=$('im').value.trim(),body={name:$('n').value,cat,price:$('pr').value,fmt:$('fm').value,alc:$('al').checked,isNew:$('nw').checked,sale:$('sl').value};
+ if(/^[0-9]+$/.test(im))body.ambrosiaNo=im;else if(im)body.imageUrl=im;
+ const r=await api('/drinks','POST',body);if(!r.ok){say('Error: '+(r.j.error||r.status));return}
+ say('Added "'+r.j.drink.name+'" (id '+r.j.drink.id+').\n'+(r.j.image.ok?'Image pulled from '+r.j.image.source:'No image: '+r.j.image.error)+'\n'+(r.j.synced?'Backed up to GitHub.':'Not backed up to GitHub (set GITHUB_TOKEN and GITHUB_REPO).'));$('f').reset();$('c').onchange()};
 loadOrders();setInterval(loadOrders,5000);
 </script>

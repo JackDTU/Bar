@@ -1,15 +1,16 @@
 {
- "name": "last-orders-bar",
- "version": "1.0.0",
- "type": "module",
- "engines": {
-  "node": ">=18"
- },
- "scripts": {
-  "start": "node server.js"
- },
- "dependencies": {
-  "express": "^4.19.2",
-  "dotenv": "^16.4.5"
- }
+  "name": "last-orders-bar",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "sharp": "^0.33.5"
+  }
 }
