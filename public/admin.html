@@ -1,0 +1,8 @@
+<!DOCTYPE html><meta name=viewport content="width=device-width,initial-scale=1"><title>Orders</title>
+<style>body{background:#000;color:#f2f0eb;font-family:Helvetica,Arial;padding:16px}.o{border-top:1px solid #333;padding:12px 0}.p{color:#5fe37a}.f{color:#ff3b1f}button{padding:8px 14px;font-weight:700}</style>
+<h1>ORDERS</h1><div id=l></div>
+<script>const k=new URLSearchParams(location.search).get("key");
+async function load(){const r=await fetch("/api/orders?key="+k);if(!r.ok){l.textContent="Unauthorised";return}
+l.innerHTML=(await r.json()).map(o=>`<div class=o><b>${o.reference.slice(-6).toUpperCase()}</b> <span class="${o.status=="PAID"?"p":o.status=="FAILED"?"f":""}">${o.status}</span> · ${o.dkk} kr · ${new Date(o.created).toLocaleTimeString()}<br>${o.desc}<br>${o.status=="PAID"&&!o.served?`<button onclick="srv('${o.reference}')">Served</button>`:o.served?"served ✓":""}</div>`).join("")}
+async function srv(r){await fetch("/api/orders/"+r+"/served?key="+k,{method:"POST"});load()}
+load();setInterval(load,5000)</script>

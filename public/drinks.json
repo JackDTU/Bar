@@ -1,0 +1,654 @@
+[
+ {
+  "id": 0,
+  "name": "Spritz ish",
+  "price": 30,
+  "cat": "Soft Drinks",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/150360.jpg",
+   "https://ambrosiagroup.dk/img/prod/150360.png"
+  ]
+ },
+ {
+  "id": 1,
+  "name": "Birra Moretti",
+  "price": 27,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/76421.png",
+   "https://ambrosiagroup.dk/img/prod/76421.jpg"
+  ]
+ },
+ {
+  "id": 2,
+  "name": "Anarkist - Fizzy lime",
+  "price": 40,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/153953.png",
+   "https://ambrosiagroup.dk/img/prod/153953.jpg"
+  ]
+ },
+ {
+  "id": 3,
+  "name": "Brøl - Like you give a deamn",
+  "price": 33,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/16987.png",
+   "https://ambrosiagroup.dk/img/prod/16987.jpg"
+  ]
+ },
+ {
+  "id": 4,
+  "name": "To Øl - Tropical Rumble",
+  "price": 32,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/75430.jpg",
+   "https://ambrosiagroup.dk/img/prod/75430.png"
+  ]
+ },
+ {
+  "id": 5,
+  "name": "To Øl - Whirl domination",
+  "price": 31,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/75428.jpg",
+   "https://ambrosiagroup.dk/img/prod/75428.png"
+  ]
+ },
+ {
+  "id": 6,
+  "name": "Guinness",
+  "price": 35,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 7,
+  "name": "To Øl - Brondbajer",
+  "price": 34,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/154639.png",
+   "https://ambrosiagroup.dk/img/prod/154639.jpg"
+  ]
+ },
+ {
+  "id": 8,
+  "name": "Kingfisher",
+  "price": 30,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/54521.png",
+   "https://ambrosiagroup.dk/img/prod/54521.jpg"
+  ]
+ },
+ {
+  "id": 9,
+  "name": "Peroni Chill Lemon",
+  "price": 32,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/150546.jpg",
+   "https://ambrosiagroup.dk/img/prod/150546.png"
+  ]
+ },
+ {
+  "id": 10,
+  "name": "Herslev Under Solen",
+  "price": 34,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/152277.jpg",
+   "https://ambrosiagroup.dk/img/prod/152277.png"
+  ]
+ },
+ {
+  "id": 11,
+  "name": "Monster",
+  "price": 25,
+  "cat": "Soft Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 12,
+  "name": "Rekorderlig Pear",
+  "price": 32,
+  "cat": "Ciders and Other Alcoholic Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/152732.jpg",
+   "https://ambrosiagroup.dk/img/prod/152732.png"
+  ]
+ },
+ {
+  "id": 13,
+  "name": "Mahou Session IPA",
+  "price": 26,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 14,
+  "name": "Corona",
+  "price": 26,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 15,
+  "name": "Gamma Zig Zag Session IPA",
+  "price": 39,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 16,
+  "name": "Faxe Kondi",
+  "price": 18,
+  "cat": "Soft Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 17,
+  "name": "Coca-Cola",
+  "price": 18,
+  "cat": "Soft Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 18,
+  "name": "Krenkerup Doppel Bock",
+  "price": 34,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "SALE!! DKK - 7.00",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 19,
+  "name": "Paulaner Weissbier Naturtrüb",
+  "price": 35,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 20,
+  "name": "Bundaberg Ginger Beer",
+  "price": 32,
+  "cat": "Ginger Beer & Kombucha",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 21,
+  "name": "Depanneur Bière Sans Bière",
+  "price": 30,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 22,
+  "name": "Æblerov over hegnet",
+  "price": 27,
+  "cat": "Ciders and Other Alcoholic Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 23,
+  "name": "Fanta",
+  "price": 18,
+  "cat": "Soft Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 24,
+  "name": "1664 Blanc",
+  "price": 30,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 25,
+  "name": "To Øl - Snublejuice",
+  "price": 29,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 26,
+  "name": "Erdinger Hefe Weissbier",
+  "price": 35,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 27,
+  "name": "Tuborg Påskebryg",
+  "price": 14,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "SALE!! DKK - 7.00",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 28,
+  "name": "La Chouette Cider Blond",
+  "price": 36,
+  "cat": "Ciders and Other Alcoholic Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 29,
+  "name": "white - il capolavoro",
+  "price": 25,
+  "cat": "Wine",
+  "isNew": false,
+  "sale": "",
+  "fmt": "wine",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 30,
+  "name": "Thy Limfjordsporter",
+  "price": 24,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 31,
+  "name": "Tuborg Grøn",
+  "price": 18,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 32,
+  "name": "To Øl - Implosion Amber 0.5%",
+  "price": 27,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 33,
+  "name": "Coca-Cola Zero",
+  "price": 18,
+  "cat": "Soft Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 34,
+  "name": "Kirin Ichiban Free",
+  "price": 28,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 35,
+  "name": "Tuborg Classic",
+  "price": 18,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 36,
+  "name": "Rekorderlig Skovbær",
+  "price": 31,
+  "cat": "Ciders and Other Alcoholic Drinks",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 37,
+  "name": "Tuborg Twist Citron 0.0%",
+  "price": 21,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 38,
+  "name": "Sapporo Black",
+  "price": 43,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": [
+   "https://ambrosiagroup.dk/img/prod/151489.jpg",
+   "https://ambrosiagroup.dk/img/prod/151489.png"
+  ]
+ },
+ {
+  "id": 39,
+  "name": "Tsingtao",
+  "price": 28,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 40,
+  "name": "Tail of a Whale",
+  "price": 24,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 41,
+  "name": "Ichnusa non filtrata",
+  "price": 27,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 42,
+  "name": "Krenkerup Juleøl",
+  "price": 22,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "SALE!! DKK - 7.00",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 43,
+  "name": "Brooklyn Special Effects",
+  "price": 42,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 44,
+  "name": "rosé - Lindeman's",
+  "price": 35,
+  "cat": "Wine",
+  "isNew": false,
+  "sale": "",
+  "fmt": "wine",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 45,
+  "name": "Kombucha Time Hibiscus, Hyben & Hyldeblomst No. 1",
+  "price": 32,
+  "cat": "Ginger Beer & Kombucha",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 46,
+  "name": "Ale Nr. 16",
+  "price": 18,
+  "cat": "Normal Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 47,
+  "name": "Teedawn Gentle Lager",
+  "price": 35,
+  "cat": "Non-Alc. Beers",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 48,
+  "name": "Vigo Kombucha Rose Øko",
+  "price": 30,
+  "cat": "Ginger Beer & Kombucha",
+  "isNew": false,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 49,
+  "name": "Desperados",
+  "price": 30,
+  "cat": "Ciders and Other Alcoholic Drinks",
+  "isNew": true,
+  "sale": "",
+  "fmt": "bottle",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 50,
+  "name": "Folk Combucha",
+  "price": 35,
+  "cat": "Ginger Beer & Kombucha",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 51,
+  "name": "Thrive Peak",
+  "price": 35,
+  "cat": "Non-Alc. Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ },
+ {
+  "id": 52,
+  "name": "Åben - circle session IPA",
+  "price": 33,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 53,
+  "name": "Cuvee Cruse Red wine",
+  "price": 40,
+  "cat": "Wine",
+  "isNew": true,
+  "sale": "",
+  "fmt": "wine",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 54,
+  "name": "Mikkeller Hop Shop",
+  "price": 30,
+  "cat": "Normal Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": true,
+  "img": []
+ },
+ {
+  "id": 55,
+  "name": "Thrive Unwind IPA",
+  "price": 35,
+  "cat": "Non-Alc. Beers",
+  "isNew": true,
+  "sale": "",
+  "fmt": "can",
+  "alc": false,
+  "img": []
+ }
+]

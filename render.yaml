@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: last-orders-bar
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - {key: VIPPS_BASE, value: https://apitest.vipps.no}
+      - {key: CLIENT_ID, sync: false}
+      - {key: CLIENT_SECRET, sync: false}
+      - {key: SUB_KEY, sync: false}
+      - {key: MSN, sync: false}
+      - {key: PUBLIC_URL, sync: false}
+      - {key: ADMIN_KEY, sync: false}
+      - {key: MIN_AGE, value: "18"}
