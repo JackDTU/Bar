@@ -1,26 +1,30 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#000000"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><title>LAST ORDERS — Bar</title><style>
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'><meta name='theme-color' content='#000000'><meta name='apple-mobile-web-app-capable' content='yes'><link rel='manifest' href='manifest.webmanifest'><title>Fredagsbar 344</title><style>
 :root{--k:#000;--w:#f2f0eb;--r:#ff3b1f;--mp:#5a78ff}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
-body{background:var(--k);color:var(--w);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+body{background:var(--k);color:var(--w);font-family:'Helvetica Neue',Arial,sans-serif;overflow-x:hidden}
 .top{position:fixed;inset:0 0 auto 0;display:flex;justify-content:space-between;padding:18px 24px;z-index:20;mix-blend-mode:difference;font-weight:700;letter-spacing:.08em;font-size:.8rem;text-transform:uppercase;color:#fff;pointer-events:none}
 .hero{height:70svh;display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
-.hero h1{font-size:clamp(3.6rem,17vw,20rem);line-height:.8;letter-spacing:-.06em;font-weight:900;text-transform:uppercase}
+.hero h1{font-size:clamp(2.6rem,12.4vw,15rem);line-height:.82;letter-spacing:-.06em;font-weight:900;text-transform:uppercase}
 .hero p{margin-top:20px;max-width:40ch;opacity:.7}
 .mq{border-block:1px solid #333;overflow:hidden;white-space:nowrap;padding:14px 0;background:var(--w);color:var(--k)}
 .mq div{display:inline-block;animation:m 30s linear infinite;font-weight:900;font-size:1.6rem;text-transform:uppercase}
 @keyframes m{to{transform:translateX(-50%)}}
 .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr)}
+#sb{position:sticky;top:0;z-index:15;background:var(--k);padding:14px 24px;border-bottom:1px solid #333}
+#q{width:100%;background:none;border:0;border-bottom:2px solid var(--w);color:var(--w);font-size:1.4rem;padding:8px 0;outline:none;font-family:inherit;text-transform:uppercase;letter-spacing:-.02em}
+#q::placeholder{color:#777}
+#none{display:none;padding:40px 24px;opacity:.6}
 #stage{position:sticky;top:0;height:100svh;border-left:1px solid #333;background:radial-gradient(circle at 50% 45%,#26231f,#000 72%);display:flex;align-items:center;justify-content:center;perspective:900px;overflow:hidden}
 #card{width:min(300px,70%);height:62%;transform-style:preserve-3d;transition:transform .12s ease-out;position:relative;display:flex;align-items:center;justify-content:center;background:none}
 #card img,#card svg{max-width:100%;max-height:100%;background:none;transform:translateZ(40px);pointer-events:none}
 #card img.rm{filter:url(#kw)}
-#gs{position:absolute;bottom:-4%;left:20%;right:20%;height:26px;background:radial-gradient(ellipse at center,rgba(0,0,0,.75),transparent 70%);transform:translateZ(0)}
+#gs{position:absolute;bottom:-4%;left:20%;right:20%;height:26px;background:radial-gradient(ellipse at center,rgba(0,0,0,.75),transparent 70%)}
 #info{position:absolute;left:24px;right:24px;bottom:90px;pointer-events:none}
 #info small{opacity:.6;letter-spacing:.15em;text-transform:uppercase}
 #info h3{font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.04em;text-transform:uppercase;line-height:.95;margin:6px 0}
 #info b{font-size:1.6rem}
 #hint{position:absolute;top:60px;right:24px;font-size:.7rem;opacity:.5;letter-spacing:.1em;text-transform:uppercase}
-section{padding:60px 24px 10px}
+section{padding:50px 24px 10px}
 h2{font-size:clamp(2.2rem,6vw,6rem);letter-spacing:-.05em;line-height:.85;text-transform:uppercase;margin-bottom:24px}
 h2 sup{font-size:.2em;color:var(--r);letter-spacing:0;vertical-align:top}
 .row{display:grid;grid-template-columns:44px 1fr auto 130px;gap:12px;align-items:center;padding:16px 0;border-top:1px solid #333;transition:padding .25s,background .25s,color .25s;cursor:pointer}
@@ -44,82 +48,89 @@ footer{padding:60px 24px 170px;opacity:.5;font-size:.8rem}
 .ovl.on{display:flex}.ovl h1{font-size:clamp(3rem,14vw,14rem);line-height:.85;letter-spacing:-.06em;text-transform:uppercase}
 .ovl p{margin-top:20px;opacity:.75;max-width:48ch}.ovl .b{margin-top:22px;align-self:flex-start;background:var(--w);color:#000;border:0;padding:14px 22px;font-weight:800;cursor:pointer;text-transform:uppercase;text-decoration:none;font-size:.9rem}
 .ovl .b.mp{background:var(--mp);color:#fff}
-.badge{position:fixed;top:56px;left:24px;z-index:25;background:var(--r);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.1em;padding:5px 9px;text-transform:uppercase;display:none}
-.demo .badge{display:block}
-@media(max-width:860px){.wrap{display:block}#stage{position:sticky;top:0;height:44svh;z-index:5;border:0;border-bottom:1px solid #333}#info{bottom:10px}#hint{display:none}.row{grid-template-columns:1fr auto}.row .n{display:none}.row .q{grid-column:1/-1;justify-content:flex-start}section{padding-top:40px}}
-</style></head><body><svg width="0" height="0" style="position:absolute"><filter id="kw" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -4.2 -4.2 -4.2 0 11.7"/><feComponentTransfer><feFuncA type="linear" slope="1" intercept="0"/></feComponentTransfer><feComposite in2="SourceAlpha" operator="in"/></filter></svg>
-<div class="top"><span>Last Orders ©</span><span>Fridge → Hand</span></div>
-<div class="badge">Demo mode · no real payment</div>
-<div class="hero"><h1>Last<br>Orders</h1><p>56 drinks. Tilt the bottle, tap pay, collect at the bar.</p></div>
-<div class="mq"><div id="mq"></div></div>
-<div class="wrap"><main id="menu"></main>
-<aside id="stage"><div id="card"><div id="art" style="display:contents"></div><div id="gs"></div></div><div id="hint">Move cursor to tilt</div>
-<div id="info"><small id="ic"></small><h3 id="in"></h3><b id="ip"></b></div></aside></div>
+@media(max-width:860px){.wrap{display:block}#stage{position:sticky;top:0;height:44svh;z-index:5;border:0;border-bottom:1px solid #333}#sb{top:44svh;z-index:4;padding:10px 16px}#info{bottom:10px}#hint{display:none}.row{grid-template-columns:1fr auto}.row .n{display:none}.row .q{grid-column:1/-1;justify-content:flex-start}section{padding-top:30px}}
+</style></head><body>
+<svg width='0' height='0' style='position:absolute'><filter id='kw' color-interpolation-filters='sRGB'><feColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -4.2 -4.2 -4.2 0 11.7'/><feComposite in2='SourceAlpha' operator='in'/></filter></svg>
+<div class='top'><span>Fredagsbar 344 &copy;</span><span>Fridge &rarr; Hand</span></div>
+<div class='hero'><h1>Fredagsbar<br>344</h1><p><span id='cnt'>0</span> drinks. Tilt the bottle, tap pay, collect at the bar.</p></div>
+<div class='mq'><div id='mq'></div></div>
+<div class='wrap'><main><div id='sb'><input id='q' type='search' placeholder='Search drinks...' autocomplete='off'></div><div id='menu'></div><div id='none'>No drinks found.</div></main>
+<aside id='stage'><div id='card'><div id='art' style='display:contents'></div><div id='gs'></div></div><div id='hint'>Move cursor to tilt</div>
+<div id='info'><small id='ic'></small><h3 id='in'></h3><b id='ip'></b></div></aside></div>
 <footer>Drink responsibly. 18+ for alcohol (age checked in MobilePay). Prices in DKK.</footer>
-<div id="dock"><div><b id="tot">0 kr</b><small id="sum"></small></div><button id="pay">Pay with MobilePay →</button></div>
-<div class="ovl" id="mp"><h1 id="mh"></h1><p id="mt"></p><a class="b mp" id="mgo" target="_blank" rel="noopener">Open MobilePay</a><button class="b" id="mcp">Copy amount</button><button class="b" id="mdone">I have paid</button><button class="b" onclick="mpDone(false)" id="mcx">Cancel</button></div>
-<div class="ovl" id="ov"><h1 id="ovh"></h1><p id="ovp"></p><button class="b" onclick="location.href='/'">Back to menu</button></div><script>const DRINKS=[{"id": 0, "name": "Spritz ish", "price": 30, "cat": "Soft Drinks", "isNew": true, "sale": "", "fmt": "can", "alc": false, "img": ["https://ambrosiagroup.dk/img/prod/150360.jpg", "https://ambrosiagroup.dk/img/prod/150360.png"]}, {"id": 1, "name": "Birra Moretti", "price": 27, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/76421.png", "https://ambrosiagroup.dk/img/prod/76421.jpg"]}, {"id": 2, "name": "Anarkist - Fizzy lime", "price": 40, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/153953.png", "https://ambrosiagroup.dk/img/prod/153953.jpg"]}, {"id": 3, "name": "Brøl - Like you give a deamn", "price": 33, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/16987.png", "https://ambrosiagroup.dk/img/prod/16987.jpg"]}, {"id": 4, "name": "To Øl - Tropical Rumble", "price": 32, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/75430.jpg", "https://ambrosiagroup.dk/img/prod/75430.png"]}, {"id": 5, "name": "To Øl - Whirl domination", "price": 31, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/75428.jpg", "https://ambrosiagroup.dk/img/prod/75428.png"]}, {"id": 6, "name": "Guinness", "price": 35, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 7, "name": "To Øl - Brondbajer", "price": 34, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/154639.png", "https://ambrosiagroup.dk/img/prod/154639.jpg"]}, {"id": 8, "name": "Kingfisher", "price": 30, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/54521.png", "https://ambrosiagroup.dk/img/prod/54521.jpg"]}, {"id": 9, "name": "Peroni Chill Lemon", "price": 32, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/150546.jpg", "https://ambrosiagroup.dk/img/prod/150546.png"]}, {"id": 10, "name": "Herslev Under Solen", "price": 34, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/152277.jpg", "https://ambrosiagroup.dk/img/prod/152277.png"]}, {"id": 11, "name": "Monster", "price": 25, "cat": "Soft Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 12, "name": "Rekorderlig Pear", "price": 32, "cat": "Ciders and Other Alcoholic Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/152732.jpg", "https://ambrosiagroup.dk/img/prod/152732.png"]}, {"id": 13, "name": "Mahou Session IPA", "price": 26, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 14, "name": "Corona", "price": 26, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 15, "name": "Gamma Zig Zag Session IPA", "price": 39, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 16, "name": "Faxe Kondi", "price": 18, "cat": "Soft Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 17, "name": "Coca-Cola", "price": 18, "cat": "Soft Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 18, "name": "Krenkerup Doppel Bock", "price": 34, "cat": "Normal Beers", "isNew": false, "sale": "SALE!! DKK - 7.00", "fmt": "can", "alc": true, "img": []}, {"id": 19, "name": "Paulaner Weissbier Naturtrüb", "price": 35, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 20, "name": "Bundaberg Ginger Beer", "price": 32, "cat": "Ginger Beer & Kombucha", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 21, "name": "Depanneur Bière Sans Bière", "price": 30, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 22, "name": "Æblerov over hegnet", "price": 27, "cat": "Ciders and Other Alcoholic Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 23, "name": "Fanta", "price": 18, "cat": "Soft Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 24, "name": "1664 Blanc", "price": 30, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 25, "name": "To Øl - Snublejuice", "price": 29, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 26, "name": "Erdinger Hefe Weissbier", "price": 35, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 27, "name": "Tuborg Påskebryg", "price": 14, "cat": "Normal Beers", "isNew": false, "sale": "SALE!! DKK - 7.00", "fmt": "can", "alc": true, "img": []}, {"id": 28, "name": "La Chouette Cider Blond", "price": 36, "cat": "Ciders and Other Alcoholic Drinks", "isNew": false, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 29, "name": "white - il capolavoro", "price": 25, "cat": "Wine", "isNew": false, "sale": "", "fmt": "wine", "alc": true, "img": []}, {"id": 30, "name": "Thy Limfjordsporter", "price": 24, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 31, "name": "Tuborg Grøn", "price": 18, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 32, "name": "To Øl - Implosion Amber 0.5%", "price": 27, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 33, "name": "Coca-Cola Zero", "price": 18, "cat": "Soft Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 34, "name": "Kirin Ichiban Free", "price": 28, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 35, "name": "Tuborg Classic", "price": 18, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 36, "name": "Rekorderlig Skovbær", "price": 31, "cat": "Ciders and Other Alcoholic Drinks", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 37, "name": "Tuborg Twist Citron 0.0%", "price": 21, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 38, "name": "Sapporo Black", "price": 43, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": ["https://ambrosiagroup.dk/img/prod/151489.jpg", "https://ambrosiagroup.dk/img/prod/151489.png"]}, {"id": 39, "name": "Tsingtao", "price": 28, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 40, "name": "Tail of a Whale", "price": 24, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 41, "name": "Ichnusa non filtrata", "price": 27, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 42, "name": "Krenkerup Juleøl", "price": 22, "cat": "Normal Beers", "isNew": false, "sale": "SALE!! DKK - 7.00", "fmt": "can", "alc": true, "img": []}, {"id": 43, "name": "Brooklyn Special Effects", "price": 42, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 44, "name": "rosé - Lindeman's", "price": 35, "cat": "Wine", "isNew": false, "sale": "", "fmt": "wine", "alc": true, "img": []}, {"id": 45, "name": "Kombucha Time Hibiscus, Hyben & Hyldeblomst No. 1", "price": 32, "cat": "Ginger Beer & Kombucha", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 46, "name": "Ale Nr. 16", "price": 18, "cat": "Normal Beers", "isNew": false, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 47, "name": "Teedawn Gentle Lager", "price": 35, "cat": "Non-Alc. Beers", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 48, "name": "Vigo Kombucha Rose Øko", "price": 30, "cat": "Ginger Beer & Kombucha", "isNew": false, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 49, "name": "Desperados", "price": 30, "cat": "Ciders and Other Alcoholic Drinks", "isNew": true, "sale": "", "fmt": "bottle", "alc": true, "img": []}, {"id": 50, "name": "Folk Combucha", "price": 35, "cat": "Ginger Beer & Kombucha", "isNew": true, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 51, "name": "Thrive Peak", "price": 35, "cat": "Non-Alc. Beers", "isNew": true, "sale": "", "fmt": "can", "alc": false, "img": []}, {"id": 52, "name": "Åben - circle session IPA", "price": 33, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 53, "name": "Cuvee Cruse Red wine", "price": 40, "cat": "Wine", "isNew": true, "sale": "", "fmt": "wine", "alc": true, "img": []}, {"id": 54, "name": "Mikkeller Hop Shop", "price": 30, "cat": "Normal Beers", "isNew": true, "sale": "", "fmt": "can", "alc": true, "img": []}, {"id": 55, "name": "Thrive Unwind IPA", "price": 35, "cat": "Non-Alc. Beers", "isNew": true, "sale": "", "fmt": "can", "alc": false, "img": []}];
+<div id='dock'><div><b id='tot'>0 kr</b><small id='sum'></small></div><button id='pay'>Pay with MobilePay &rarr;</button></div>
+<div class='ovl' id='mp'><h1 id='mh'></h1><p id='mt'></p><a class='b mp' id='mgo' target='_blank' rel='noopener'>Open MobilePay</a><button class='b' id='mcp'>Copy amount</button><button class='b' id='mdone'>I have paid</button><button class='b' id='mcx'>Cancel</button></div>
+<div class='ovl' id='ov'><h1 id='ovh'></h1><p id='ovp'></p><button class='b' onclick="location.href='/'">Back to menu</button></div>
+<script>
 const $=id=>document.getElementById(id);
-const DEMO=location.protocol==="file:";if(DEMO)document.body.classList.add("demo");
-const PAL=[[/guinn/i,["#0b0b0b","#e8c872","#e8c872"]],[/coca-cola zero/i,["#111","#fff","#e60012"]],[/coca/i,["#d6001c","#fff","#fff"]],[/fanta/i,["#ff8a00","#fff","#5b2a86"]],[/faxe/i,["#0a8f3c","#ffe14a","#fff"]],[/monster/i,["#0b0b0b","#7bff00","#7bff00"]],[/corona/i,["#f4e6a8","#1b4a9c","#c8a22c"]],[/kingfisher/i,["#0b2a6b","#fff","#e8c030"]],[/sapporo/i,["#0b0b0b","#d4af37","#d4af37"]],[/tsingtao/i,["#0c6b3a","#fff","#fff"]],[/paulaner/i,["#f2efe6","#0a3a6a","#c8102e"]],[/erdinger/i,["#f2efe6","#1a3b7a","#c8a22c"]],[/rekorderlig/i,["#6a1b3a","#fff","#f4b6c8"]],[/desperados/i,["#e8b400","#7a0c0c","#7a0c0c"]],[/bundaberg/i,["#5a2d0c","#f6d55c","#f6d55c"]],[/1664/i,["#f4f4f4","#0a2a6b","#c8a22c"]],[/krenkerup j/i,["#9a1020","#f1e3c0","#f1e3c0"]],[/krenkerup/i,["#0f3d2e","#e0c070","#e0c070"]],[/kirin/i,["#e6e6e6","#b3001b","#b3001b"]],[/tuborg gr/i,["#0b6b3a","#fff","#fff"]],[/tuborg påske/i,["#f0d44a","#1a3a7a","#1a3a7a"]],[/tuborg twist/i,["#f2e04a","#0b6b3a","#0b6b3a"]],[/tuborg/i,["#1c3f8f","#f1d26a","#f1d26a"]],[/to øl/i,["#ff5a8a","#1a1a1a","#fff200"]],[/åben/i,["#5ad1c8","#111","#111"]],[/thrive/i,["#1d5c4a","#f2f0eb","#e8c872"]],[/kombucha|combucha/i,["#c75a8a","#fff","#fff"]],[/mahou/i,["#c8102e","#fff","#fff"]],[/ichnusa/i,["#d9a400","#0b2a6b","#0b2a6b"]],[/gamma/i,["#2a2a2a","#ffcf3a","#ffcf3a"]],[/thy/i,["#161616","#d9c9a0","#d9c9a0"]],[/brooklyn/i,["#1a1a1a","#fff","#f5c400"]],[/il capolavoro/i,["#e8e0b0","#4a5a1a","#4a5a1a"]],[/lindeman/i,["#f2b6b6","#7a1a2a","#7a1a2a"]],[/cuvee|cruse/i,["#4a0f1e","#e8d8b0","#e8d8b0"]]];
-function pal(n){for(const[r,p]of PAL)if(r.test(n))return p;let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))%360;return [`hsl(${h},55%,28%)`,"#f2f0eb","#f2f0eb"]}
-function placeholder(d){const[bg,fg,ac]=pal(d.name),parts=d.name.split(" - "),t=(parts.length>1?parts.slice(1).join(" - "):d.name).toUpperCase();
- const L=[];let cur="";for(const w of t.split(" ")){if((cur+" "+w).trim().length>11&&cur){L.push(cur);cur=w}else cur=(cur+" "+w).trim()}L.push(cur);
- const fs=L.length>3?15:L.length>2?18:22,y0=(d.fmt==="can"?190:262)-(L.length-1)*fs*.55;
- const txt=L.map((l,i)=>`<text x="100" y="${y0+i*fs*1.1}" text-anchor="middle" font-family="Helvetica,Arial" font-weight="900" font-size="${fs}" fill="${fg}">${l.replace(/&/g,"&amp;")}</text>`).join("");
- const shape=d.fmt==="can"?`<rect x="30" y="30" width="140" height="300" rx="16" fill="#cfd3d8"/><rect x="30" y="70" width="140" height="220" fill="${bg}"/><rect x="40" y="22" width="120" height="14" rx="6" fill="#aab0b8"/><rect x="48" y="78" width="104" height="3" fill="${ac}"/>`
- :`<path d="M80 10h40v22h-4v70c0 18 34 40 34 70v150c0 10-6 16-16 16H62c-10 0-16-6-16-16V172c0-30 34-52 34-70V32z" fill="${d.fmt==="wine"?"#1d3b1f":"#7a4a10"}"/><rect x="46" y="200" width="108" height="130" fill="${bg}"/><rect x="78" y="4" width="44" height="12" rx="3" fill="${ac}"/><rect x="58" y="206" width="84" height="3" fill="${ac}"/>`;
- return `<svg viewBox="0 0 200 360">${shape}${txt}</svg>`}
-const srcs=d=>[`img/${d.id}.png`,...(d.img||[])];
-function setSrc(el,i){const d=DRINKS[el.dataset.id],s=srcs(d);if(i>=s.length){const w=document.createElement("div");w.innerHTML=placeholder(d);el.replaceWith(w.firstChild);return}
- el.dataset.n=i;el.classList.toggle("rm",/^https?:/.test(s[i]));el.src=s[i]}
+const ORDER=['Normal Beers','Non-Alc. Beers','Ciders and Other Alcoholic Drinks','Wine','Soft Drinks','Ginger Beer & Kombucha'];
+let DRINKS=[],byId={},hid=new Set(),cart={},pending=null,idle=true,t=0;
+const PAL=[[/guinn/i,['#0b0b0b','#e8c872','#e8c872']],[/coca-cola zero/i,['#111','#fff','#e60012']],[/coca/i,['#d6001c','#fff','#fff']],[/fanta/i,['#ff8a00','#fff','#5b2a86']],[/monster/i,['#0b0b0b','#7bff00','#7bff00']],[/erdinger/i,['#f2efe6','#1a3b7a','#c8a22c']],[/desperados/i,['#e8b400','#7a0c0c','#7a0c0c']],[/krenkerup j/i,['#9a1020','#f1e3c0','#f1e3c0']],[/tuborg p/i,['#f0d44a','#1a3a7a','#1a3a7a']],[/tuborg twist/i,['#f2e04a','#0b6b3a','#0b6b3a']],[/kombucha|combucha/i,['#c75a8a','#fff','#fff']],[/il capolavoro/i,['#e8e0b0','#4a5a1a','#4a5a1a']],[/lindeman/i,['#f2b6b6','#7a1a2a','#7a1a2a']],[/cuvee|cruse/i,['#4a0f1e','#e8d8b0','#e8d8b0']]];
+function pal(n){for(const[r,p]of PAL)if(r.test(n))return p;let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))%360;return ['hsl('+h+',55%,28%)','#f2f0eb','#f2f0eb']}
+function placeholder(d){const[bg,fg,ac]=pal(d.name),parts=d.name.split(' - '),tt=(parts.length>1?parts.slice(1).join(' - '):d.name).toUpperCase();
+ const L=[];let cur='';for(const w of tt.split(' ')){if((cur+' '+w).trim().length>11&&cur){L.push(cur);cur=w}else cur=(cur+' '+w).trim()}L.push(cur);
+ const fs=L.length>3?15:L.length>2?18:22,y0=(d.fmt==='can'?190:262)-(L.length-1)*fs*.55;
+ const txt=L.map((l,i)=>`<text x='100' y='${y0+i*fs*1.1}' text-anchor='middle' font-family='Helvetica,Arial' font-weight='900' font-size='${fs}' fill='${fg}'>${l.replace(/&/g,'&amp;')}</text>`).join('');
+ const shape=d.fmt==='can'?`<rect x='30' y='30' width='140' height='300' rx='16' fill='#cfd3d8'/><rect x='30' y='70' width='140' height='220' fill='${bg}'/><rect x='40' y='22' width='120' height='14' rx='6' fill='#aab0b8'/><rect x='48' y='78' width='104' height='3' fill='${ac}'/>`
+ :`<path d='M80 10h40v22h-4v70c0 18 34 40 34 70v150c0 10-6 16-16 16H62c-10 0-16-6-16-16V172c0-30 34-52 34-70V32z' fill='${d.fmt==='wine'?'#1d3b1f':'#7a4a10'}'/><rect x='46' y='200' width='108' height='130' fill='${bg}'/><rect x='78' y='4' width='44' height='12' rx='3' fill='${ac}'/><rect x='58' y='206' width='84' height='3' fill='${ac}'/>`;
+ return `<svg viewBox='0 0 200 360'>${shape}${txt}</svg>`}
+const srcs=d=>['img/'+d.id+'.png',...(d.img||[])];
+function setSrc(el,i){const d=byId[el.dataset.id],s=srcs(d);if(i>=s.length){const w=document.createElement('div');w.innerHTML=placeholder(d);el.replaceWith(w.firstChild);return}el.dataset.n=i;el.classList.toggle('rm',/^https?:/.test(s[i]));el.src=s[i]}
 window.imgFail=el=>setSrc(el,+el.dataset.n+1);
-const art=d=>{const w=document.createElement("div");w.innerHTML=`<img referrerpolicy="no-referrer" data-id="${d.id}" data-n="0" alt="${d.name}" onerror="imgFail(this)">`;const el=w.firstChild;setSrc(el,0);return el};
-const CATS=[...new Set(DRINKS.map(d=>d.cat))],cart={};
-$("mq").innerHTML=Array(6).fill(CATS.join(" ✺ ")+" ✺ ").join("");
-$("menu").innerHTML=CATS.map(c=>{const items=DRINKS.filter(d=>d.cat===c);
- return `<section><h2>${c}<sup>${String(items.length).padStart(2,"0")}</sup></h2>`+items.map(d=>`
- <div class="row" id="r${d.id}" data-id="${d.id}"><span class="n">${String(d.id+1).padStart(2,"0")}</span>
- <div class="t">${d.name}${d.isNew?'<span class="tag">NEW</span>':''}${d.sale?'<span class="tag">SALE</span>':''}<small>${d.sale||''}</small></div>
- <span class="p">${d.price} kr</span>
- <div class="q"><button data-d="-1" aria-label="less">−</button><span id="q${d.id}">0</span><button data-d="1" aria-label="more">+</button></div></div>`).join("")+`</section>`}).join("");
-$("menu").addEventListener("click",e=>{const r=e.target.closest(".row");if(!r)return;const id=+r.dataset.id,b=e.target.closest("button");if(b)chg(id,+b.dataset.d);show(id)});
-function chg(id,d){cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+d));$("q"+id).textContent=cart[id];upd()}
-const lines=()=>Object.entries(cart).filter(([,q])=>q>0).map(([id,q])=>[DRINKS[id],q]);
+function art(d){const w=document.createElement('div');w.innerHTML=`<img referrerpolicy='no-referrer' data-id='${d.id}' data-n='0' alt='' onerror='imgFail(this)'>`;const el=w.firstChild;setSrc(el,0);return el}
+const norm=s=>s.toLowerCase().replaceAll('ø','o').replaceAll('æ','ae').replaceAll('å','a').replaceAll('é','e').replaceAll('è','e').replaceAll('ö','o').replaceAll('ü','u').replaceAll('ä','a');
+function build(){
+ const vis=DRINKS.filter(d=>!hid.has(d.id));
+ const cats=[...ORDER.filter(c=>vis.some(d=>d.cat===c)),...[...new Set(vis.map(d=>d.cat))].filter(c=>!ORDER.includes(c))];
+ $('cnt').textContent=vis.length;
+ $('mq').innerHTML=Array(6).fill('Fredagsbar 344 ✺ '+cats.join(' ✺ ')+' ✺ ').join('');
+ $('menu').innerHTML=cats.map(c=>{const items=vis.filter(d=>d.cat===c);
+  return `<section><h2>${c}<sup>${String(items.length).padStart(2,'0')}</sup></h2>`+items.map(d=>`<div class='row' id='r${d.id}' data-id='${d.id}'><span class='n'>${String(d.id+1).padStart(2,'0')}</span><div class='t'>${d.name}${d.isNew?"<span class='tag'>NEW</span>":''}${d.sale?"<span class='tag'>SALE</span>":''}<small>${d.sale||''}</small></div><span class='p'>${d.price} kr</span><div class='q'><button data-d='-1' aria-label='less'>-</button><span id='q${d.id}'>0</span><button data-d='1' aria-label='more'>+</button></div></div>`).join('')+'</section>'}).join('');
+ if(vis.length)show(vis[0].id);
+}
+function filter(){const q=norm($('q').value.trim());let total=0;
+ document.querySelectorAll('#menu section').forEach(s=>{let n=0;s.querySelectorAll('.row').forEach(r=>{const d=byId[r.dataset.id],ok=!q||norm(d.name+' '+d.cat).includes(q);r.style.display=ok?'':'none';if(ok)n++});
+  s.style.display=n?'':'none';s.querySelector('sup').textContent=String(n).padStart(2,'0');total+=n});
+ $('none').style.display=total?'none':'block'}
+$('q').addEventListener('input',filter);
+$('menu').addEventListener('click',e=>{const r=e.target.closest('.row');if(!r)return;const id=+r.dataset.id,b=e.target.closest('button');if(b)chg(id,+b.dataset.d);show(id)});
+function chg(id,d){cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+d));$('q'+id).textContent=cart[id];upd()}
+const lines=()=>Object.entries(cart).filter(([,q])=>q>0).map(([id,q])=>[byId[id],q]);
 const total=()=>lines().reduce((s,[d,q])=>s+d.price*q,0);
-const desc=()=>lines().map(([d,q])=>`${q}× ${d.name}`).join(", ");
-function upd(){$("tot").textContent=total()+" kr";$("sum").textContent=desc();$("dock").classList.toggle("on",total()>0)}
-function show(id){document.querySelectorAll(".row.sel").forEach(r=>r.classList.remove("sel"));$("r"+id).classList.add("sel");
- const d=DRINKS[id];$("ic").textContent=d.cat;$("in").textContent=d.name;$("ip").textContent=d.price+" kr";$("art").replaceChildren(art(d))}
-const card=$("card"),stage=$("stage");let idle=true,t=0;
+const desc=()=>lines().map(([d,q])=>q+'x '+d.name).join(', ');
+function upd(){$('tot').textContent=total()+' kr';$('sum').textContent=desc();$('dock').classList.toggle('on',total()>0)}
+function show(id){document.querySelectorAll('.row.sel').forEach(r=>r.classList.remove('sel'));const r=$('r'+id);if(r)r.classList.add('sel');
+ const d=byId[id];$('ic').textContent=d.cat;$('in').textContent=d.name;$('ip').textContent=d.price+' kr';$('art').replaceChildren(art(d))}
+const card=$('card'),stage=$('stage');
 function tilt(x,y){const r=stage.getBoundingClientRect(),px=Math.max(-1,Math.min(1,(x-r.left-r.width/2)/(r.width/2))),py=Math.max(-1,Math.min(1,(y-r.top-r.height/2)/(r.height/2)));card.style.transform=`rotateY(${px*14}deg) rotateX(${-py*10}deg)`}
-addEventListener("mousemove",e=>{idle=false;tilt(e.clientX,e.clientY)});
-addEventListener("touchmove",e=>{idle=false;tilt(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
-addEventListener("deviceorientation",e=>{if(e.gamma==null)return;idle=false;card.style.transform=`rotateY(${Math.max(-14,Math.min(14,e.gamma/3))}deg) rotateX(${Math.max(-10,Math.min(10,((e.beta||45)-45)/4))}deg)`});
-document.addEventListener("mouseleave",()=>idle=true);
+addEventListener('mousemove',e=>{idle=false;tilt(e.clientX,e.clientY)});
+addEventListener('touchmove',e=>{idle=false;tilt(e.touches[0].clientX,e.touches[0].clientY)},{passive:true});
+addEventListener('deviceorientation',e=>{if(e.gamma==null)return;idle=false;card.style.transform=`rotateY(${Math.max(-14,Math.min(14,e.gamma/3))}deg) rotateX(${Math.max(-10,Math.min(10,((e.beta||45)-45)/4))}deg)`});
+document.addEventListener('mouseleave',()=>idle=true);
 setInterval(()=>{if(idle){t+=.05;card.style.transform=`rotateY(${Math.sin(t)*10}deg) rotateX(${Math.cos(t*.7)*4}deg)`}},40);
-const showOv=(h,p)=>{$("mp").classList.remove("on");$("ovh").innerHTML=h;$("ovp").textContent=p;$("ov").classList.add("on")};
-/* ---- payment ---- */
-let pending=null;
-function fallbackScreen(j){pending=j;$("mh").innerHTML=`Pay<br>${j.amount} kr`;$("mt").textContent=`Open MobilePay, enter exactly ${j.amount} kr and write "${j.reference.slice(-6).toUpperCase()}" as the message. Then tap "I have paid" and show this screen to the bartender.`;
- $("mgo").href=j.fallbackUrl;$("mgo").style.display="";$("mcp").style.display="";$("mdone").style.display="";$("mcx").style.display="";$("mp").classList.add("on")}
-$("mcp").onclick=()=>{navigator.clipboard?.writeText(String(pending.amount));$("mcp").textContent="Copied ✓"};
-$("mdone").onclick=()=>showOv("Show this<br>at the bar",`${desc()} — ${pending.amount} kr — code ${pending.reference.slice(-6).toUpperCase()}`);
-window.mpDone=ok=>{$("mp").classList.remove("on")};
-$("pay").onclick=async()=>{
- if(DEMO){showOv("Demo.<br>No payment.",`Would charge ${total()} kr for ${desc()}. Deploy the server to enable MobilePay.`);return}
- $("pay").disabled=true;$("pay").textContent="Opening…";
- try{const r=await fetch("/api/create-payment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:lines().map(([d,qty])=>({id:d.id,qty}))})});
+const showOv=(h,p)=>{$('mp').classList.remove('on');$('ovh').innerHTML=h;$('ovp').textContent=p;$('ov').classList.add('on')};
+function fallbackScreen(j){pending=j;$('mh').innerHTML='Pay<br>'+j.amount+' kr';$('mt').textContent='Open MobilePay, enter exactly '+j.amount+' kr and write '+j.reference.slice(-6).toUpperCase()+' as the message. Then tap I have paid and show the next screen to the bartender.';$('mgo').href=j.fallbackUrl;$('mp').classList.add('on')}
+$('mcp').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(String(pending.amount));$('mcp').textContent='Copied'};
+$('mdone').onclick=()=>showOv('Show this<br>at the bar',desc()+' - '+pending.amount+' kr - code '+pending.reference.slice(-6).toUpperCase());
+$('mcx').onclick=()=>$('mp').classList.remove('on');
+$('pay').onclick=async()=>{$('pay').disabled=true;$('pay').textContent='Opening...';
+ try{const r=await fetch('/api/create-payment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:lines().map(([d,qty])=>({id:d.id,qty}))})});
   const j=await r.json();
-  if(j.redirectUrl){location.assign(j.redirectUrl);return}   // opened as-is, as MobilePay requires
-  if(j.fallbackUrl){fallbackScreen(j)}else throw 0;
- }catch{showOv("Oops.","Payment could not be started. Please ask the bartender.")}
- $("pay").disabled=false;$("pay").textContent="Pay with MobilePay →"};
-const ref=new URLSearchParams(location.search).get("ref");
-if(ref&&!DEMO){showOv("Checking<br>payment…","Hold on, asking MobilePay.");let n=0;
- const poll=async()=>{try{const j=await (await fetch("/api/status/"+ref)).json();
-  if(j.status==="PAID")showOv("Paid.<br>Cheers.",`Show this at the bar: ${j.desc} (${j.total} kr). Code ${j.code}`);
-  else if(j.status==="FAILED")showOv("Cancelled.","No money moved. Your liver thanks you.");
-  else if(++n<45)setTimeout(poll,2000);else showOv("Still pending.","Ask the bartender before paying again.")}catch{if(++n<45)setTimeout(poll,3000)}};
+  if(j.redirectUrl){location.assign(j.redirectUrl);return}
+  if(j.fallbackUrl)fallbackScreen(j);else if(j.error==='unavailable')showOv('Sorry.','One of the drinks just sold out. Reload the menu.');else throw 0;
+ }catch(e){showOv('Oops.','Payment could not be started. Please ask the bartender.')}
+ $('pay').disabled=false;$('pay').textContent='Pay with MobilePay →'};
+const ref=new URLSearchParams(location.search).get('ref');
+if(ref){showOv('Checking<br>payment...','Hold on, asking MobilePay.');let n=0;
+ const poll=async()=>{try{const j=await (await fetch('/api/status/'+ref)).json();
+  if(j.status==='PAID')showOv('Paid.<br>Cheers.','Show this at the bar: '+j.desc+' ('+j.total+' kr). Code '+j.code);
+  else if(j.status==='FAILED')showOv('Cancelled.','No money moved. Your liver thanks you.');
+  else if(++n<45)setTimeout(poll,2000);else showOv('Still pending.','Ask the bartender before paying again.')}catch(e){if(++n<45)setTimeout(poll,3000)}};
  setTimeout(poll,2500)}
-$("r0").classList.add("sel");show(0);</script></body></html>
+(async()=>{
+ try{DRINKS=await (await fetch('drinks.json')).json()}catch(e){document.body.innerHTML='<p style="padding:24px;color:#fff">Menu could not be loaded. Start the server (npm start) and open http://localhost:3000</p>';return}
+ DRINKS.forEach(d=>byId[d.id]=d);
+ try{hid=new Set(await (await fetch('/api/hidden')).json())}catch(e){}
+ build();
+})();
+</script></body></html>
